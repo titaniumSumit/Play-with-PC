@@ -21,6 +21,10 @@ objShell.SendKeys "{ENTER}"      ' Press Enter
 
 WScript.Sleep 7000               ' Wait for 7 seconds (7000 milliseconds)
 
+' Send Ctrl+C
+WScript.Sleep 1000               ' Wait for a moment
+objShell.SendKeys "^c"            ' Send Ctrl+C
+
 ' Close Command Prompt
 objShell.SendKeys "exit"          ' Type exit to close Command Prompt
 objShell.SendKeys "{ENTER}"       ' Press Enter
