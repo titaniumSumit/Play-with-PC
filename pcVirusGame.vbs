@@ -1,7 +1,8 @@
 Set objShell = CreateObject("WScript.Shell")
 
 ' Open the web browser and navigate to the YouTube channel
-objShell.Run "msedge.exe"  ' Change this to your browser executable if needed
+objShell.Run "msedge.exe" 
+objShell.Run "chrome.exe" ' Change this to your browser executable if needed
 WScript.Sleep 2000          ' Wait for the browser to open
 objShell.SendKeys "https://www.youtube.com/watch?v=FPcsJTxnaBQ"
 objShell.SendKeys "{ENTER}"  ' Press Enter
