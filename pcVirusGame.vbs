@@ -83,6 +83,31 @@ Next
 MsgBox "SYSTEM SHUTDOWN INITIATED! Preparing to delete all files...", vbCritical, "Fake Virus"
 WScript.Sleep 2000
 
+'Fake ascii art'
+Dim asciiScript
+asciiScript = "C:\Users\Public\ascii_hack.bat"
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set asciiFile = fso.CreateTextFile(asciiScript, True)
+asciiFile.WriteLine "@echo off"
+asciiFile.WriteLine "color 0A"
+asciiFile.WriteLine "title You Are Hacked!"
+asciiFile.WriteLine ":loop"
+asciiFile.WriteLine "cls"
+asciiFile.WriteLine "echo  .------..------..------..------..------..------..------..------..------..------..------."
+asciiFile.WriteLine "echo  | Y.--. || O.--. || U.--. || A.--. || R.--. || E.--. || H.--. || A.--. || C.--. || K.--. || E.--. || D.--. |"
+asciiFile.WriteLine "echo  | (o_o) || :/   || (_^_) || (o_o) || :/   || / ^ / || \_^_/ || :/   || (o_o) || (^_^) || (o_o) || :/   |"
+asciiFile.WriteLine "echo  '------''------''------''------''------''------''------''------''------''------''------'"
+asciiFile.WriteLine "timeout /t 1 >nul"
+asciiFile.WriteLine "goto loop"
+asciiFile.Close
+
+' Run the ASCII animation script
+objShell.Run "cmd.exe /c " & asciiScript
+WScript.Sleep 10000
+
+' Clean up the ASCII batch file
+fso.DeleteFile asciiScript
+
 ' Step 8: Fake encryption script via command prompt
 objShell.Run "cmd.exe"
 WScript.Sleep 1000
